@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Level Economics Revision Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Navigation Header -->
+        <header class="header">
+            <div class="container">
+                <div class="flex items-center justify-between">
+                    <h1 class="header__title">A Level Economics</h1>
+                    <nav class="nav">
+                        <button class="nav__item nav__item--active" data-section="dashboard">Dashboard</button>
+                        <button class="nav__item" data-section="notes">Notes</button>
+                        <button class="nav__item" data-section="flashcards">Flashcards</button>
+                        <button class="nav__item" data-section="quiz">Quiz</button>
+                        <button class="nav__item" data-section="strategy">Strategy</button>
+                        <button class="nav__item" data-section="planner">Planner</button>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="main container">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section section--active">
+                <div class="dashboard">
+                    <h2>Welcome to Your Economics Revision Hub</h2>
+                    <p class="dashboard__subtitle">Master A Level Economics with comprehensive study materials, interactive flashcards, and practice quizzes.</p>
+                    
+                    <div class="dashboard__stats">
+                        <div class="stat-card">
+                            <h3>Study Progress</h3>
+                            <div class="progress-bar">
+                                <div class="progress-bar__fill" style="width: 0%"></div>
+                            </div>
+                            <p><span id="progress-percent">0</span>% Complete</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Flashcards Studied</h3>
+                            <p class="stat-number"><span id="flashcards-count">0</span>/50+</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Quiz Score</h3>
+                            <p class="stat-number"><span id="quiz-score">0</span>%</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-access">
+                        <h3>Quick Access</h3>
+                        <div class="quick-access__grid">
+                            <button class="btn btn--primary" data-section="notes">Study Notes</button>
+                            <button class="btn btn--secondary" data-section="flashcards">Practice Flashcards</button>
+                            <button class="btn btn--secondary" data-section="quiz">Take Quiz</button>
+                            <button class="btn btn--outline" data-section="planner">View Study Plan</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notes Section -->
+            <section id="notes" class="section">
+                <div class="notes">
+                    <h2>Study Notes</h2>
+                    <div class="theme-tabs">
+                        <button class="theme-tab theme-tab--active" data-theme="theme1">Theme 1: Markets & Market Failure</button>
+                        <button class="theme-tab" data-theme="theme2">Theme 2: UK Economy Performance</button>
+                    </div>
+
+                    <div id="theme1-content" class="theme-content theme-content--active">
+                        <div class="notes-section">
+                            <h3>Nature of Economics</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Economics as social science:</strong> Studies human behavior in allocating scarce resources</li>
+                                        <li><strong>Positive vs Normative statements:</strong> Positive = factual/testable; Normative = opinion-based/value judgements</li>
+                                        <li><strong>Scarcity & Opportunity Cost:</strong> Limited resources require choices; opportunity cost = value of next best alternative forgone</li>
+                                        <li><strong>PPF Diagrams:</strong> Shows maximum production combinations; shifts = change in productive capacity; movements = change in allocation</li>
+                                        <li><strong>Specialisation/Division of Labour:</strong> Increases efficiency but creates interdependence</li>
+                                        <li><strong>Functions of Money:</strong> Medium of exchange, store of value, unit of account, standard of deferred payment</li>
+                                        <li><strong>Economy Types:</strong> Free market (price mechanism), Mixed (public + private), Command (central planning)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>How Markets Work</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Rational Decision Making:</strong> Consumers maximize utility; producers maximize profit</li>
+                                        <li><strong>Demand Determinants:</strong> Price, income, tastes, substitutes/complements, population, expectations</li>
+                                        <li><strong>Supply Determinants:</strong> Costs of production, technology, subsidies/taxes, expectations, number of suppliers</li>
+                                        <li><strong>Market Equilibrium:</strong> Where demand = supply; consumer + producer surplus maximized</li>
+                                        <li><strong>Elasticities:</strong>
+                                            <ul>
+                                                <li>PED = % change Qd / % change P</li>
+                                                <li>PES = % change Qs / % change P</li>
+                                                <li>YED = % change Qd / % change Y</li>
+                                                <li>XED = % change Qd good A / % change P good B</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Price Mechanism Functions:</strong> Signaling (information), Incentivising (rewards), Rationing (allocation)</li>
+                                        <li><strong>Alternative Behaviors:</strong> Bounded rationality, herding behavior, behavioral economics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>Market Failure</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Externalities:</strong>
+                                            <ul>
+                                                <li>Negative: Third-party costs (pollution) → over-consumption/production</li>
+                                                <li>Positive: Third-party benefits (education) → under-consumption/production</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Public Goods:</strong> Non-excludable + non-rival → free rider problem → under-provision</li>
+                                        <li><strong>Information Gaps:</strong> Asymmetric information → poor decisions
+                                            <ul>
+                                                <li>Merit goods: Under-consumed (healthcare, education)</li>
+                                                <li>Demerit goods: Over-consumed (tobacco, alcohol)</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Welfare Loss:</strong> Deadweight loss from market failure shown on diagrams</li>
+                                        <li><strong>Government Failure:</strong> Regulatory capture, unintended consequences, bureaucracy costs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>Government Intervention</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Taxes:</strong> Direct (income) vs Indirect (VAT); reduce consumption/production</li>
+                                        <li><strong>Subsidies:</strong> Increase consumption/production; reduce market price</li>
+                                        <li><strong>Price Controls:</strong>
+                                            <ul>
+                                                <li>Minimum prices (above equilibrium) → surpluses</li>
+                                                <li>Maximum prices (below equilibrium) → shortages</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Regulation:</strong> Rules/standards; tradeable permits for pollution</li>
+                                        <li><strong>Real Example:</strong> UK sugar tax on soft drinks - reduced consumption by 30%</li>
+                                        <li><strong>Evaluation:</strong> Effectiveness depends on elasticity, enforcement, side effects</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="theme2-content" class="theme-content">
+                        <div class="notes-section">
+                            <h3>Measures of Economic Performance</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Real GDP:</strong> Value of goods/services adjusted for inflation; measures economic size</li>
+                                        <li><strong>Inflation:</strong> CPI (basket of goods) vs RPI (includes housing); target = 2%</li>
+                                        <li><strong>Unemployment Types:</strong>
+                                            <ul>
+                                                <li>Cyclical: Due to economic downturn</li>
+                                                <li>Structural: Skills mismatch from economic change</li>
+                                                <li>Frictional: Job searching time</li>
+                                                <li>Seasonal: Time of year variations</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Balance of Payments:</strong> Current account (trade) + Capital account (investment flows)</li>
+                                        <li><strong>GDP Limitations:</strong> Doesn't include unpaid work, environmental costs, income distribution, shadow economy</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>Aggregate Demand (AD)</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>AD Formula:</strong> C + I + G + (X-M)</li>
+                                        <li><strong>Consumption (C):</strong> Influenced by income, confidence, interest rates, wealth</li>
+                                        <li><strong>Investment (I):</strong> Influenced by interest rates, confidence, technology, regulations</li>
+                                        <li><strong>Government Spending (G):</strong> Policy decision based on economic objectives</li>
+                                        <li><strong>Net Exports (X-M):</strong> Exchange rates, relative inflation, income abroad</li>
+                                        <li><strong>MPC/MPS:</strong> Marginal propensity to consume/save from additional income</li>
+                                        <li><strong>Multiplier Effect:</strong> Initial injection → rounds of spending → larger final impact</li>
+                                        <li><strong>Multiplier = 1/(1-MPC) = 1/MPS</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>Aggregate Supply (AS)</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>SRAS Factors:</strong> Wages, raw material costs, productivity, indirect taxes/subsidies</li>
+                                        <li><strong>LRAS Factors:</strong> Technology, education/training, infrastructure, competition, supply shocks</li>
+                                        <li><strong>Supply Shocks:</strong> Sudden changes in costs (oil prices, weather)</li>
+                                        <li><strong>Productivity:</strong> Output per worker; key for long-term growth</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>National Income & Economic Growth</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Circular Flow:</strong> Households ↔ Firms with leakages (S,T,M) and injections (I,G,X)</li>
+                                        <li><strong>Equilibrium:</strong> When S+T+M = I+G+X</li>
+                                        <li><strong>Actual Growth:</strong> Increase in real GDP (movement towards PPF)</li>
+                                        <li><strong>Potential Growth:</strong> Increase in productive capacity (PPF shift outward)</li>
+                                        <li><strong>Output Gaps:</strong> Positive (above trend) = inflation pressure; Negative (below trend) = unemployment</li>
+                                        <li><strong>Benefits:</strong> Higher living standards, employment, tax revenue</li>
+                                        <li><strong>Costs:</strong> Environmental damage, inequality, inflation</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="notes-section">
+                            <h3>Macroeconomic Policies</h3>
+                            <div class="card">
+                                <div class="card__body">
+                                    <ul>
+                                        <li><strong>Objectives:</strong> Economic growth, low inflation, low unemployment, balanced BOP</li>
+                                        <li><strong>Fiscal Policy:</strong> Government spending and taxation
+                                            <ul>
+                                                <li>Expansionary: Increase G, cut taxes</li>
+                                                <li>Contractionary: Cut G, raise taxes</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Monetary Policy:</strong> Interest rates, money supply, QE
+                                            <ul>
+                                                <li>Lower rates = stimulate demand</li>
+                                                <li>Higher rates = reduce inflation</li>
+                                            </ul>
+                                        </li>
+                                        <li><strong>Supply-Side Policies:</strong> Education, training, deregulation, infrastructure</li>
+                                        <li><strong>Policy Conflicts:</strong> Growth vs inflation, unemployment vs inflation (Phillips curve)</li>
+                                        <li><strong>Time Lags:</strong> Recognition, implementation, impact lags affect effectiveness</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Flashcards Section -->
+            <section id="flashcards" class="section">
+                <div class="flashcards">
+                    <h2>Interactive Flashcards</h2>
+                    <div class="flashcard-controls">
+                        <button class="btn btn--secondary" id="shuffle-cards">Shuffle Cards</button>
+                        <div class="card-counter">
+                            <span>Card <span id="current-card">1</span> of <span id="total-cards">0</span></span>
+                        </div>
+                        <div class="theme-filter">
+                            <select class="form-control" id="card-theme">
+                                <option value="all">All Topics</option>
+                                <option value="definitions">Definitions</option>
+                                <option value="formulas">Formulas</option>
+                                <option value="policies">Policies</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-container">
+                        <div class="flashcard" id="flashcard">
+                            <div class="flashcard__front">
+                                <div class="flashcard__content">
+                                    <p id="card-front">Click "Next Card" to start studying</p>
+                                </div>
+                            </div>
+                            <div class="flashcard__back">
+                                <div class="flashcard__content">
+                                    <p id="card-back">Answer will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flashcard-buttons">
+                        <button class="btn btn--outline" id="prev-card">Previous</button>
+                        <button class="btn btn--primary" id="flip-card">Flip Card</button>
+                        <button class="btn btn--outline" id="next-card">Next Card</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz" class="section">
+                <div class="quiz">
+                    <div id="quiz-menu" class="quiz-menu">
+                        <h2>Practice Quiz</h2>
+                        <p>Test your knowledge with randomized questions covering both themes.</p>
+                        <div class="quiz-options">
+                            <div class="form-group">
+                                <label class="form-label">Number of Questions:</label>
+                                <select class="form-control" id="question-count">
+                                    <option value="5">5 Questions</option>
+                                    <option value="10" selected>10 Questions</option>
+                                    <option value="15">15 Questions</option>
+                                    <option value="20">20 Questions</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Topic Focus:</label>
+                                <select class="form-control" id="quiz-theme">
+                                    <option value="all">All Topics</option>
+                                    <option value="theme1">Theme 1: Markets & Market Failure</option>
+                                    <option value="theme2">Theme 2: UK Economy</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary btn--lg" id="start-quiz">Start Quiz</button>
+                    </div>
+
+                    <div id="quiz-content" class="quiz-content" style="display: none;">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">
+                                <span>Question <span id="question-number">1</span> of <span id="total-questions">10</span></span>
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" id="quiz-progress"></div>
+                                </div>
+                            </div>
+                            <div class="quiz-score">Score: <span id="current-score">0</span>/<span id="possible-score">0</span></div>
+                        </div>
+
+                        <div class="question-container">
+                            <h3 id="question-text">Question will appear here</h3>
+                            <div class="answer-options" id="answer-options">
+                                <!-- Options will be inserted here -->
+                            </div>
+                        </div>
+
+                        <div class="quiz-controls">
+                            <button class="btn btn--outline" id="prev-question" disabled>Previous</button>
+                            <button class="btn btn--primary" id="submit-answer" disabled>Submit Answer</button>
+                            <button class="btn btn--outline" id="next-question" style="display: none;">Next Question</button>
+                        </div>
+
+                        <div class="feedback" id="feedback" style="display: none;">
+                            <!-- Feedback will appear here -->
+                        </div>
+                    </div>
+
+                    <div id="quiz-results" class="quiz-results" style="display: none;">
+                        <h2>Quiz Complete!</h2>
+                        <div class="results-summary">
+                            <div class="result-stat">
+                                <h3>Final Score</h3>
+                                <p class="stat-number"><span id="final-score">0</span>/<span id="final-total">0</span> (<span id="final-percentage">0</span>%)</p>
+                            </div>
+                            <div class="result-stat">
+                                <h3>Performance</h3>
+                                <p id="performance-message">Good effort!</p>
+                            </div>
+                        </div>
+                        <button class="btn btn--primary" id="restart-quiz">Take Another Quiz</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Strategy Section -->
+            <section id="strategy" class="section">
+                <div class="strategy">
+                    <h2>Exam Strategy & Techniques</h2>
+                    
+                    <div class="strategy-section">
+                        <h3>KAAE Method</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <p>Essential approach for high-mark questions (4+ marks):</p>
+                                <ul>
+                                    <li><strong>Knowledge:</strong> Start with clear definitions and economic terms</li>
+                                    <li><strong>Application:</strong> Use data from the question or real-world examples</li>
+                                    <li><strong>Analysis:</strong> Develop chains of reasoning with economic diagrams</li>
+                                    <li><strong>Evaluation:</strong> Make balanced judgements with counterarguments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-section">
+                        <h3>Essay Writing Technique</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <ol>
+                                    <li><strong>Brief Introduction:</strong> Define key terms and outline your approach</li>
+                                    <li><strong>Analysis Paragraphs (2-3):</strong> Each with diagrams and chains of reasoning</li>
+                                    <li><strong>Evaluation Paragraphs (2-3):</strong> Consider limitations, alternatives, context</li>
+                                    <li><strong>Clear Conclusion:</strong> Justified judgement based on your analysis</li>
+                                    <li><strong>Contemporary Examples:</strong> Use recent UK economic events and data</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-section">
+                        <h3>Exam Structure (1hr 30min, 80 marks)</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <ul>
+                                    <li><strong>Section A:</strong> Multiple choice & short answers (1-3 marks) - 15 minutes</li>
+                                    <li><strong>Section B:</strong> Medium answers (4-15 marks) requiring analysis and diagrams - 45 minutes</li>
+                                    <li><strong>Section C:</strong> One long essay (up to 20 marks) with evaluation - 30 minutes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-section">
+                        <h3>Key Diagrams to Master</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <ul>
+                                    <li>Supply and Demand with shifts and movements</li>
+                                    <li>Consumer and Producer Surplus</li>
+                                    <li>Externality diagrams (positive and negative)</li>
+                                    <li>Tax and subsidy effects on markets</li>
+                                    <li>Minimum and maximum price controls</li>
+                                    <li>AD/AS model with policy impacts</li>
+                                    <li>Multiplier effect illustration</li>
+                                    <li>Output gaps on AD/AS diagram</li>
+                                    <li>Phillips curve relationship</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-section">
+                        <h3>Common Pitfalls to Avoid</h3>
+                        <div class="card">
+                            <div class="card__body">
+                                <ul>
+                                    <li>Not reading the question carefully - identify command words</li>
+                                    <li>Providing description instead of analysis</li>
+                                    <li>Missing evaluation in higher mark questions</li>
+                                    <li>Drawing diagrams without proper labeling</li>
+                                    <li>Not using data or examples when available</li>
+                                    <li>Running out of time on essay questions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Planner Section -->
+            <section id="planner" class="section">
+                <div class="planner">
+                    <h2>8-Day Revision Planner</h2>
+                    <p>Structured countdown to exam success</p>
+                    
+                    <div class="planner-grid">
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 1</h3>
+                                <h4>Theme 1 Intensive - Micro Concepts</h4>
+                                <ul>
+                                    <li>Review all Theme 1 notes thoroughly</li>
+                                    <li>Practice drawing supply/demand diagrams</li>
+                                    <li>Master elasticity calculations</li>
+                                    <li>Study market failure examples</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day1-complete">
+                                    <label for="day1-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 2</h3>
+                                <h4>Theme 1 Continued - Practice with Flashcards</h4>
+                                <ul>
+                                    <li>Use flashcards for key definitions</li>
+                                    <li>Focus on government intervention methods</li>
+                                    <li>Practice real-world application examples</li>
+                                    <li>Test understanding with quick quizzes</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day2-complete">
+                                    <label for="day2-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 3</h3>
+                                <h4>Micro Past Paper Practice</h4>
+                                <ul>
+                                    <li>Complete Theme 1 exam questions</li>
+                                    <li>Self-mark using mark schemes</li>
+                                    <li>Identify weak areas for review</li>
+                                    <li>Practice timing for different question types</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day3-complete">
+                                    <label for="day3-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 4</h3>
+                                <h4>Theme 2 Intensive - Macro Diagrams & Policies</h4>
+                                <ul>
+                                    <li>Study all Theme 2 notes</li>
+                                    <li>Master AD/AS diagrams and shifts</li>
+                                    <li>Understand policy tools and effects</li>
+                                    <li>Learn current UK economic statistics</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day4-complete">
+                                    <label for="day4-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 5</h3>
+                                <h4>Theme 2 Continued - Policy Debates Focus</h4>
+                                <ul>
+                                    <li>Study policy conflicts and trade-offs</li>
+                                    <li>Practice evaluation arguments</li>
+                                    <li>Review multiplier effect calculations</li>
+                                    <li>Focus on contemporary examples</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day5-complete">
+                                    <label for="day5-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 6</h3>
+                                <h4>Macro Past Paper & Model Answers</h4>
+                                <ul>
+                                    <li>Complete Theme 2 exam questions</li>
+                                    <li>Compare answers with model responses</li>
+                                    <li>Practice essay structure using KAAE</li>
+                                    <li>Time yourself on longer questions</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day6-complete">
+                                    <label for="day6-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 7</h3>
+                                <h4>Weak Spots Review - Definitions & Diagrams</h4>
+                                <ul>
+                                    <li>Review areas identified as weak</li>
+                                    <li>Intensive flashcard practice</li>
+                                    <li>Re-draw key diagrams from memory</li>
+                                    <li>Final check on all formulas</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day7-complete">
+                                    <label for="day7-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="planner-day card">
+                            <div class="card__body">
+                                <h3>Day 8</h3>
+                                <h4>Full Timed Mock & Contemporary Examples</h4>
+                                <ul>
+                                    <li>Complete full mock exam (1hr 30min)</li>
+                                    <li>Practice all three sections</li>
+                                    <li>Review recent economic news</li>
+                                    <li>Light review - stay confident!</li>
+                                </ul>
+                                <div class="day-checkbox">
+                                    <input type="checkbox" id="day8-complete">
+                                    <label for="day8-complete">Mark as complete</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="planner-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Study Tips</h3>
+                                <ul>
+                                    <li>Take regular breaks - use Pomodoro technique (25min study, 5min break)</li>
+                                    <li>Create summary sheets for each topic</li>
+                                    <li>Practice diagrams until you can draw them perfectly</li>
+                                    <li>Stay updated with current UK economic news</li>
+                                    <li>Form study groups to discuss complex concepts</li>
+                                    <li>Get plenty of sleep, especially before the exam</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
